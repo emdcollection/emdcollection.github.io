@@ -1,0 +1,293 @@
+<style>
+body {
+    background-image: linear-gradient(rgb(148, 66, 173), rgb(210, 144, 236));
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+}
+
+.titletext {
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    font-size: 60px;
+    color: rgb(247, 226, 255);
+}
+
+p {
+    text-align: center;
+    align-items: center;
+    align-self: center;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 45%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.buttonalt {
+  border: none;
+  color: white;
+  padding: 16px 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 16%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.button1 {
+  background-image: radial-gradient(rgb(207, 134, 255),rgb(171, 89, 219));
+  color: black; 
+  border: 2px solid #5f2794;
+}
+
+.button1:hover {
+  background-image: radial-gradient(rgb(119, 39, 184),rgb(91, 21, 109));
+  color: white;
+}
+
+img {
+  outline: 4px solid rgb(107, 0, 150);
+}
+
+.container {
+  background-image: radial-gradient(rgb(211, 134, 255),rgb(189, 89, 219));
+  margin: 8px 2px;
+  padding: 16px 32px;
+}
+
+</style>
+
+<title id="pointstitle">Social Justice Quiz 0</title>
+
+<br>
+
+<p id="points" class="titletext">Social Justice Quiz: 0</p>
+<b><p id="question">Press Begin to Start!</p></b>
+
+<br>
+<p>
+
+    <button id="answer1button" class="button button1" onclick="answer(1)">...</button> <button id="answer2button" class="button button1" onclick="answer(2)">...</button> <button id="answer3button" class="button button1" onclick="answer(3)">...</button> <button id="answer4button" class="button button1" onclick="answer(4)">...</button>
+
+    <br>
+    <br>
+
+    <button id="next" class="buttonalt button1" onclick="next()">Begin</button><button class="buttonalt button1" onclick="window.location='index.html'">Back to Main Page</button>
+</p>
+<script>
+var question = "Loading..."
+var questionnumber = 0
+var answer1
+var answer2
+var answer3
+var answer4
+var correctanswer = 4
+var correctanswerstring = "..."
+var score = 0
+var answered = false
+var loading = true
+var right 
+
+function next() {
+  loading = true
+  answered = false
+  document.getElementById("next").innerHTML = "Next Question"
+  questionnumber = Math.floor(Math.random() * 15) + 1;
+  if (questionnumber == 1) {
+    question = "What is this? A shop name."
+    answer1 = "Sign"
+    answer2 = "Symbol"
+    answer3 = "..."
+    answer4 = "..."
+    correctanswer = 1
+    correctanswerstring = "The object is a sign."
+    loading = false
+  }
+  else if (questionnumber == 2) {
+    question = "What is this? A road sign."
+    answer1 = "Sign"
+    answer2 = "Symbol"
+    answer3 = "..."
+    answer4 = "..."
+    correctanswer = 1
+    correctanswerstring = "The object is a sign."
+    loading = false
+  }
+  else if (questionnumber == 3) {
+    question = "What is this? A fire officer uniform."
+    answer1 = "Sign"
+    answer2 = "Symbol"
+    answer3 = "..."
+    answer4 = "..."
+    correctanswer = 1
+    correctanswerstring = "The object is a sign."
+    loading = false
+  }
+  else if (questionnumber == 4) {
+    question = "What is this? A school uniform."
+    answer1 = "Sign"
+    answer2 = "Symbol"
+    answer3 = "..."
+    answer4 = "..."
+    correctanswer = 1
+    correctanswerstring = "The object is a sign."
+    loading = false
+  }
+  else if (questionnumber == 5) {
+    question = "What is this? A wedding ring."
+    answer1 = "Sign"
+    answer2 = "Symbol"
+    answer3 = "..."
+    answer4 = "..."
+    correctanswer = 2
+    correctanswerstring = "The object is a symbol."
+    loading = false
+  }
+  else if (questionnumber == 6) {
+    question = "What is this? A school badge."
+    answer1 = "Sign"
+    answer2 = "Symbol"
+    answer3 = "..."
+    answer4 = "..."
+    correctanswer = 2
+    correctanswerstring = "The object is a symbol."
+    loading = false
+  }
+  else if (questionnumber == 7) {
+    question = "What is this? A handshake."
+    answer1 = "Sign"
+    answer2 = "Symbol"
+    answer3 = "..."
+    answer4 = "..."
+    correctanswer = 2
+    correctanswerstring = "The gesture is a symbol."
+    loading = false
+  }
+  else if (questionnumber == 8) {
+    question = "Which symbol does this describe? One of the most popular Christian symbols; Generally represents Christianity."
+    answer1 = "Cross"
+    answer2 = "Crucifixion"
+    answer3 = "Ichthus"
+    answer4 = "Dove"
+    correctanswer = 1
+    correctanswerstring = "The symbol being described is a cross."
+    loading = false
+  }
+  else if (questionnumber == 9) {
+    question = "Which symbol does this describe? Depicted as Jesus on a Cross; Represents Jesus' triumph over sins."
+    answer1 = "Cross"
+    answer2 = "Crucifixion"
+    answer3 = "Ichthus"
+    answer4 = "Dove"
+    correctanswer = 2
+    correctanswerstring = "The symbol being described is a crucifixion."
+    loading = false
+  }
+  else if (questionnumber == 10) {
+    question = "Which symbol does this describe? A fish-like icon; Used to signal a safespace for Christians."
+    answer1 = "Cross"
+    answer2 = "Crucifixion"
+    answer3 = "Ichthus"
+    answer4 = "Dove"
+    correctanswer = 3
+    correctanswerstring = "The symbol being described is the IChThUS."
+    loading = false
+  }
+  else if (questionnumber == 11) {
+    question = "Which symbol does this describe? Represents peace. Sometimes, when represented burning, it represents the Holy Spirit."
+    answer1 = "Cross"
+    answer2 = "Crucifixion"
+    answer3 = "Ichthus"
+    answer4 = "Dove"
+    correctanswer = 4
+    correctanswerstring = "The symbol being described is the Dove."
+    loading = false
+  }
+  else if (questionnumber == 12) {
+    question = "Which symbol does this describe? The beginning and the end. Jesus refers to himself as this."
+    answer1 = "Alpha and Omega"
+    answer2 = "The Lamb"
+    answer3 = "Flame"
+    answer4 = "Holy Trinity"
+    correctanswer = 1
+    correctanswerstring = "The symbol being described is the Alpha and Omega."
+    loading = false
+  }
+  else if (questionnumber == 13) {
+    question = "Which symbol does this describe? It sometimes have a halo around its head. It represents innocence and purity."
+    answer1 = "Alpha and Omega"
+    answer2 = "The Lamb"
+    answer3 = "Flame"
+    answer4 = "Holy Trinity"
+    correctanswer = 2
+    correctanswerstring = "The symbol being described is the Lamb."
+    loading = false
+  }
+  else if (questionnumber == 14) {
+    question = "Which symbol does this describe? Represents the Holy Spirit."
+    answer1 = "Alpha and Omega"
+    answer2 = "The Lamb"
+    answer3 = "Flame"
+    answer4 = "Holy Trinity"
+    correctanswer = 3
+    correctanswerstring = "The symbol being described is the Flame."
+    loading = false
+  }
+  else if (questionnumber == 15) {
+    question = "Which symbol does this describe? Represents the Father, the Son, and the Holy Spirit."
+    answer1 = "Alpha and Omega"
+    answer2 = "The Lamb"
+    answer3 = "Flame"
+    answer4 = "Holy Trinity"
+    correctanswer = 4
+    correctanswerstring = "The symbol being described is the Holy Trinity."
+    loading = false
+  }
+  
+
+  document.getElementById("question").innerHTML = question
+  document.getElementById("answer1button").innerHTML = answer1
+  document.getElementById("answer2button").innerHTML = answer2
+  document.getElementById("answer3button").innerHTML = answer3
+  document.getElementById("answer4button").innerHTML = answer4
+}
+
+function answer(number) {
+  if (number == correctanswer & answered == false) {
+    document.getElementById(String("answer" + correctanswer + "button")).innerHTML = String("<b>" + correctanswerstring + "</b>")
+    right = true
+  }
+  else {
+    document.getElementById(String("answer" + correctanswer + "button")).innerHTML = String("<b>" + correctanswerstring + "</b>")
+    right = false
+  }
+  if (right & answered == false) {
+    score = score + 1
+  }
+  else if (answered == false) {
+    score = 0
+  }
+  document.getElementById("points").innerHTML = String("Social Justice Quiz: " + score)
+  document.getElementById("pointstitle").innerHTML = String("Social Justice Quiz " + score)
+  answered = true
+}
+</script>

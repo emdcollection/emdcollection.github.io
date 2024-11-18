@@ -1,0 +1,253 @@
+<style>
+body {
+    background-image: linear-gradient(rgb(18, 155, 134), rgb(144, 233, 236));
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+}
+
+.titletext {
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    font-size: 80px;
+    color: rgb(248, 255, 254);
+}
+
+p {
+    text-align: center;
+    align-items: center;
+    align-self: center;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 45%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.buttonalt {
+  border: none;
+  color: white;
+  padding: 16px 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 16%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.button1 {
+  background-image: radial-gradient(rgb(134, 255, 229),rgb(89, 215, 219));
+  color: black; 
+  border: 2px solid #277194;
+}
+
+.button1:hover {
+  background-image: radial-gradient(rgb(39, 179, 184),rgb(21, 99, 109));
+  color: white;
+}
+
+img {
+  outline: 4px solid rgb(0, 107, 150);
+}
+
+.container {
+  background-image: radial-gradient(rgb(134, 251, 255),rgb(89, 167, 219));
+  margin: 8px 2px;
+  padding: 16px 32px;
+}
+
+</style>
+
+<title id="pointstitle">Social Justice Quiz 0</title>
+
+<br>
+
+<p id="points" class="titletext">Social Justice Quiz: 0</p>
+<b><p id="question">Press Begin to Start!</p></b>
+
+<br>
+<p>
+
+    <button id="answer1button" class="button button1" onclick="answer(1)">...</button> <button id="answer2button" class="button button1" onclick="answer(2)">...</button> <button id="answer3button" class="button button1" onclick="answer(3)">...</button> <button id="answer4button" class="button button1" onclick="answer(4)">...</button>
+
+    <br>
+    <br>
+
+    <button id="next" class="buttonalt button1" onclick="next()">Begin</button><button class="buttonalt button1" onclick="window.location='index.html'">Back to Main Page</button>
+</p>
+<script>
+var question = "Loading..."
+var questionnumber = 0
+var answer1
+var answer2
+var answer3
+var answer4
+var correctanswer = 3
+var correctanswerstring = "..."
+var score = 0
+var answered = false
+var loading = true
+var right 
+
+function next() {
+  loading = true
+  answered = false
+  document.getElementById("next").innerHTML = "Next Question"
+  questionnumber = Math.floor(Math.random() * 11) + 1;
+  if (questionnumber == 1) {
+    question = "Match the Description: Warn sinners of their wrong-doing so that they may change."
+    answer1 = "Admonish Sinners"
+    answer2 = "Instruct the Uninformed"
+    answer3 = "Counsel the Doubtful"
+    answer4 = "Comfort the Sorrowful"
+    correctanswer = 1
+    correctanswerstring = "The description matches with the Work of Mercy \"Admonish Sinners.\""
+    loading = false
+  }
+  else if (questionnumber == 2) {
+    question = "Match the Description: Teach children about God and Christianity."
+    answer1 = "Admonish Sinners"
+    answer2 = "Instruct the Uninformed"
+    answer3 = "Counsel the Doubtful"
+    answer4 = "Comfort the Sorrowful"
+    correctanswer = 2
+    correctanswerstring = "The description matches with the Work of Mercy \"Instruct the Uninformed.\""
+    loading = false
+  }
+  else if (questionnumber == 3) {
+    question = "Match the Description: Give advice to people in doubt or in a difficult situation."
+    answer1 = "Admonish Sinners"
+    answer2 = "Instruct the Uninformed"
+    answer3 = "Counsel the Doubtful"
+    answer4 = "Comfort the Sorrowful"
+    correctanswer = 3
+    correctanswerstring = "The description matches with the Work of Mercy \"Counsel the Doubtful.\""
+    loading = false
+  }
+  else if (questionnumber == 4) {
+    question = "Match the Description: Provide aid and comfort to people when they feel bad for their previous sins."
+    answer1 = "Admonish Sinners"
+    answer2 = "Instruct the Uninformed"
+    answer3 = "Counsel the Doubtful"
+    answer4 = "Comfort the Sorrowful"
+    correctanswer = 4
+    correctanswerstring = "The description matches with the Work of Mercy \"Comfort the Sorrowful.\""
+    loading = false
+  }
+  else if (questionnumber == 5) {
+    question = "Match the Description: Be patient with sinners, as change will come in God's own time."
+    answer1 = "Be Patient with those in Error"
+    answer2 = "Forgive Offences"
+    answer3 = "Pray for the Living ad the Dead"
+    answer4 = "Admonish Sinners"
+    correctanswer = 1
+    correctanswerstring = "The description matches with the Work of Mercy \"Be Patient with those in Error.\""
+    loading = false
+  }
+  else if (questionnumber == 6) {
+    question = "Match the Description: Forgive the sins of others."
+    answer1 = "Be Patient with those in Error"
+    answer2 = "Forgive Offences"
+    answer3 = "Pray for the Living ad the Dead"
+    answer4 = "Admonish Sinners"
+    correctanswer = 2
+    correctanswerstring = "The description matches with the Work of Mercy \"Forgive Offences.\""
+    loading = false
+  }
+  else if (questionnumber == 7) {
+    question = "Match the Description: Pray for All."
+    answer1 = "Be Patient with those in Error"
+    answer2 = "Forgive Offences"
+    answer3 = "Pray for the Living ad the Dead"
+    answer4 = "Admonish Sinners"
+    correctanswer = 3
+    correctanswerstring = "The description matches with the Work of Mercy \"Pray for the Living and the Dead.\""
+    loading = false
+  }
+  else if (questionnumber == 8) {
+    question = "What is \"Preferential treatment of the poor?\""
+    answer1 = "Prefering the rich over the poor"
+    answer2 = "Prefering the poor over the rich"
+    answer3 = "Treating both parties equally prefered"
+    answer4 = "Treating both parties unprefered due to the presents of poor people"
+    correctanswer = 2
+    correctanswerstring = "\"Preferental treatment of the poor\" is prefering poor people over rich people."
+    loading = false
+  }
+  else if (questionnumber == 9) {
+    question = "Which of these is NOT an injustcie?"
+    answer1 = "Homelessness"
+    answer2 = "Discrimination"
+    answer3 = "Crime"
+    answer4 = "Public Services"
+    correctanswer = 4
+    correctanswerstring = "Public Services is not an injustice."
+    loading = false
+  }
+  else if (questionnumber == 10) {
+    question = "Which of these is NOT a justcie?"
+    answer1 = "Free Healthcare"
+    answer2 = "Public Services"
+    answer3 = "Foundations"
+    answer4 = "Discrimination"
+    correctanswer = 4
+    correctanswerstring = "Discrimination is not a justice."
+    loading = false
+  }
+  else if (questionnumber == 11) {
+    question = "Which of these is NOT a benefit of meditation?"
+    answer1 = "Controlling Anxiety"
+    answer2 = "Enhancing Self-Awareness"
+    answer3 = "Increasing Attention Span"
+    answer4 = "Lower Weight"
+    correctanswer = 4
+    correctanswerstring = "You can't directly lose weight with meditation."
+    loading = false
+  }
+  
+
+  document.getElementById("question").innerHTML = question
+  document.getElementById("answer1button").innerHTML = answer1
+  document.getElementById("answer2button").innerHTML = answer2
+  document.getElementById("answer3button").innerHTML = answer3
+  document.getElementById("answer4button").innerHTML = answer4
+}
+
+function answer(number) {
+  if (number == correctanswer & answered == false) {
+    document.getElementById(String("answer" + correctanswer + "button")).innerHTML = String("<b>" + correctanswerstring + "</b>")
+    right = true
+  }
+  else {
+    document.getElementById(String("answer" + correctanswer + "button")).innerHTML = String("<b>" + correctanswerstring + "</b>")
+    right = false
+  }
+  if (right & answered == false) {
+    score = score + 1
+  }
+  else if (answered == false) {
+    score = 0
+  }
+  document.getElementById("points").innerHTML = String("Social Justice Quiz: " + score)
+  document.getElementById("pointstitle").innerHTML = String("Social Justice Quiz " + score)
+  answered = true
+}
+</script>

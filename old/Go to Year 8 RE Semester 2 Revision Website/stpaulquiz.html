@@ -1,0 +1,348 @@
+<style>
+body {
+    background-image: linear-gradient(rgb(61, 129, 32), rgb(144, 236, 156));
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.titletext {
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    font-size: 80px;
+    color: rgb(218, 255, 211);
+}
+
+p {
+    text-align: center;
+    align-items: center;
+    align-self: center;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 45%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.buttonalt {
+  border: none;
+  color: white;
+  padding: 16px 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 16%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.button1 {
+  background-image: radial-gradient(rgb(138, 255, 134),rgb(89, 219, 117));
+  color: black; 
+  border: 2px solid #279427;
+}
+
+.button1:hover {
+  background-image: radial-gradient(rgb(39, 184, 51),rgb(21, 109, 28));
+  color: white;
+}
+
+</style>
+
+<title id="pointstitle">St Paul Quiz 0</title>
+
+<br>
+
+<p id="points" class="titletext">St Paul Quiz: 0</p>
+<b><p id="question">Press Begin to Start!</p></b>
+
+<br>
+<p>
+
+    <button id="answer1button" class="button button1" onclick="answer(1)">...</button> <button id="answer2button" class="button button1" onclick="answer(2)">...</button> <button id="answer3button" class="button button1" onclick="answer(3)">...</button> <button id="answer4button" class="button button1" onclick="answer(4)">...</button>
+
+    <br>
+    <br>
+
+    <button id="next" class="buttonalt button1" onclick="next()">Begin</button><button class="buttonalt button1" onclick="window.location='index.html'">Back to Main Page</button>
+</p>
+<script>
+var question = "Loading..."
+var questionnumber = 0
+var answer1
+var answer2
+var answer3
+var answer4
+var correctanswer = 2
+var correctanswerstring = "..."
+var score = 0
+var answered = false
+var loading = true
+var right 
+
+function next() {
+  loading = true
+  answered = false
+  document.getElementById("next").innerHTML = "Next Question"
+  questionnumber = Math.floor(Math.random() * 21) + 1;
+  if (questionnumber == 1) {
+    question = "Where was St Paul Born?"
+    answer1 = "Tarsus, Syria"
+    answer2 = "Tarsus, Cilicia"
+    answer3 = "Tarsus, Jerusalem"
+    answer4 = "Jerusalem, Cilicia"
+    correctanswer = 2
+    correctanswerstring = "St Paul was born in Tarsus, Cilicia in 4 BCE."
+    loading = false
+  }
+  else if (questionnumber == 2) {
+    question = "When was St Paul Born?"
+    answer1 = "5 BCE"
+    answer2 = "2 CE"
+    answer3 = "4 CE"
+    answer4 = "4 BCE"
+    correctanswer = 4
+    correctanswerstring = "St Paul was born in 4 BCE."
+    loading = false
+  }
+  else if (questionnumber == 3) {
+    question = "What group was St Paul in?"
+    answer1 = "A Pharisee"
+    answer2 = "A Sadducee"
+    answer3 = "An Essen"
+    answer4 = "A Zealot"
+    correctanswer = 1
+    correctanswerstring = "St Paul was a Pharisee."
+    loading = false
+  }
+  else if (questionnumber == 4) {
+    question = "What was St Paul's first occupation?"
+    answer1 = "A Pharisee"
+    answer2 = "A tent-maker"
+    answer3 = "A farmer"
+    answer4 = "Unemployed until conversion"
+    correctanswer = 2
+    correctanswerstring = "St Paul was a young tent-maker originally."
+    loading = false
+  }
+  else if (questionnumber == 5) {
+    question = "Where was Paul heading before he was converted?"
+    answer1 = "Tarsus"
+    answer2 = "Jerusalem"
+    answer3 = "Damascus"
+    answer4 = "Antioch"
+    correctanswer = 3
+    correctanswerstring = "St Paul was heading to Damascus with others."
+    loading = false
+  }
+  else if (questionnumber == 6) {
+    question = "What did Jesus do to Paul?"
+    answer1 = "Removed his eyes"
+    answer2 = "Sliced his tounge"
+    answer3 = "Grew scales over his eyes"
+    answer4 = "Crippled his legs"
+    correctanswer = 3
+    correctanswerstring = "Jesus covered Paul's eyes with scales."
+    loading = false
+  }
+  else if (questionnumber == 7) {
+    question = "Who does Jesus send to Paul?"
+    answer1 = "John Mark"
+    answer2 = "Ananias"
+    answer3 = "Timothy"
+    answer4 = "Silas"
+    correctanswer = 2
+    correctanswerstring = "Jesus sent Ananias."
+    loading = false
+  }
+  else if (questionnumber == 8) {
+    question = "Where did Paul go on his first mission?"
+    answer1 = "Cyrus and Turkey"
+    answer2 = "Cilicia and Syria"
+    answer3 = "Jerusalem and Bethlehem"
+    answer4 = "Macedonia and Turkey"
+    correctanswer = 1
+    correctanswerstring = "Paul set out to Cyrus and Turkey."
+    loading = false
+  }
+  else if (questionnumber == 9) {
+    question = "What did John Mark do to Paul and Barnabas on the first mission?"
+    answer1 = "Sided with angry Jews against them"
+    answer2 = "Abandoned them and went to Turkey"
+    answer3 = "Lead them to a group of Gentiles"
+    answer4 = "Abandoned them and went to Jerusalem"
+    correctanswer = 4
+    correctanswerstring = "John Mark abandoned them and went to Jerusalem."
+    loading = false
+  }
+  else if (questionnumber == 10) {
+    question = "What is the name of the sorceror Paul and Barnabas met?"
+    answer1 = "Bar-Jesus"
+    answer2 = "Pub-Jesus"
+    answer3 = "Inn-Jesus"
+    answer4 = "Fake-Jesus"
+    correctanswer = 1
+    correctanswerstring = "The sorceror's alias was Bar-Jesus."
+    loading = false
+  }
+  else if (questionnumber == 11) {
+    question = "What did Paul need to do after his conversion?"
+    answer1 = "Preach Christianity"
+    answer2 = "Eradicate Christianity"
+    answer3 = "Restrict Christianity to Jews"
+    answer4 = "Demonish Christianity"
+    correctanswer = 1
+    correctanswerstring = "Paul needed to Preach Christianity."
+    loading = false
+  }
+  else if (questionnumber == 12) {
+    question = "What happens after Paul heals a man in Lystra?"
+    answer1 = "Paul and Barnabas are stoned"
+    answer2 = "Paul and Barnabas are shunned by the town"
+    answer3 = "Paul and Barnabas are thought to be Greek gods"
+    answer4 = "Paul and Barnabas are believed to be sorcerors"
+    correctanswer = 3
+    correctanswerstring = "People think Paul and Barnabas are Greek gods."
+    loading = false
+  }
+  else if (questionnumber == 13) {
+    question = "Why does Paul not want to take John Mark on the second mission?"
+    answer1 = "John Mark is a Gentile"
+    answer2 = "John Mark is sick"
+    answer3 = "John Mark is busy with other Christian work"
+    answer4 = "John Mark abandoned them last mission"
+    correctanswer = 4
+    correctanswerstring = "John mark abandoned them last mission."
+    loading = false
+  }
+  else if (questionnumber == 14) {
+    question = "Who do Paul and Silas meet at a church during their second mission?"
+    answer1 = "Lydia"
+    answer2 = "Timothy"
+    answer3 = "Aquila"
+    answer4 = "A slave girl"
+    correctanswer = 2
+    correctanswerstring = "Paul and Silas meet Timothy."
+    loading = false
+  }
+  else if (questionnumber == 15) {
+    question = "What happens after Paul expells the devil out of the slave girl?"
+    answer1 = "She breaks free and kills her owners"
+    answer2 = "Her owners throw Paul and Silas in prison"
+    answer3 = "She joins them on their mission"
+    answer4 = "She faints of shock"
+    correctanswer = 2
+    correctanswerstring = "Because she stopped making money, her owners get Paul and Silas thrown into prison."
+    loading = false
+  }
+  else if (questionnumber == 16) {
+    question = "How do Paul and Silas escape the prison"
+    answer1 = "An Earthquake hits the jail"
+    answer2 = "A meteor hits the jail"
+    answer3 = "Paul and Silas are excused before escape"
+    answer4 = "Paul and Silas manage to sneak out"
+    correctanswer = 1
+    correctanswerstring = "An earthquake hit the jail, allowing Paul and Silas to escape."
+    loading = false
+  }
+  else if (questionnumber == 17) {
+    question = "Where did Paul NOT go on his third mission?"
+    answer1 = "Turkey"
+    answer2 = "Greece"
+    answer3 = "Lebanon"
+    answer4 = "Syria"
+    correctanswer = 4
+    correctanswerstring = "Paul went to Turkey, Greece, and Lebanon, but not Syria."
+    loading = false
+  }
+  else if (questionnumber == 18) {
+    question = "What books do Paul write during his third mission?"
+    answer1 = "1 and 2 Corinthians"
+    answer2 = "1 and 2 Romans"
+    answer3 = "1 and 2 Pharisees"
+    answer4 = "None"
+    correctanswer = 1
+    correctanswerstring = "Paul write 1 and 2 Corinthians, as well as Romans."
+    loading = false
+  }
+  else if (questionnumber == 19) {
+    question = "Why did Paul want his trial in Rome?"
+    answer1 = "He liked the Roman courtrooms"
+    answer2 = "He thought he would be killed elsewhere"
+    answer3 = "He knew his trial would be unfiar if it wasn't in Rome"
+    answer4 = "The Rome court was closer"
+    correctanswer = 1
+    correctanswerstring = "Paul thought his trial would be unfair, so he wanted it in Rome."
+    loading = false
+  }
+  else if (questionnumber == 20) {
+    question = "How long was Paul held in house arrest?"
+    answer1 = "2 months"
+    answer2 = "2 years"
+    answer3 = "10 years"
+    answer4 = "2 days"
+    correctanswer = 2
+    correctanswerstring = "Paul was held in house arrest for 2 years."
+    loading = false
+  }
+  else if (questionnumber == 20) {
+    question = "What was Paul's punishment after his first arrest?"
+    answer1 = "Nothing; He could keep preaching"
+    answer2 = "Paul was forced to be a Pharisee again"
+    answer3 = "Paul could never preach again"
+    answer4 = "Paul couldn't preach for a year"
+    correctanswer = 1
+    correctanswerstring = "Paul didn't recieve a harsh punishment, and was allowed to keep preaching."
+    loading = false
+  }
+  else if (questionnumber == 21) {
+    question = "Who was the Roman Emperor at the time of Paul's second arrest?"
+    answer1 = "Julius Caesar"
+    answer2 = "Augustus Caesar"
+    answer3 = "Nero"
+    answer4 = "The Roman Empire was abolished"
+    correctanswer = 3
+    correctanswerstring = "At the time, the emperor was Nero."
+    loading = false
+  }
+  document.getElementById("question").innerHTML = question
+  document.getElementById("answer1button").innerHTML = answer1
+  document.getElementById("answer2button").innerHTML = answer2
+  document.getElementById("answer3button").innerHTML = answer3
+  document.getElementById("answer4button").innerHTML = answer4
+}
+
+function answer(number) {
+  if (number == correctanswer & answered == false) {
+    document.getElementById(String("answer" + correctanswer + "button")).innerHTML = String("<b>" + correctanswerstring + "</b>")
+    right = true
+  }
+  else {
+    document.getElementById(String("answer" + correctanswer + "button")).innerHTML = String("<b>" + correctanswerstring + "</b>")
+    right = false
+  }
+  if (right & answered == false) {
+    score = score + 1
+  }
+  else if (answered == false) {
+    score = 0
+  }
+  document.getElementById("points").innerHTML = String("St Paul Quiz: " + score)
+  document.getElementById("pointstitle").innerHTML = String("St Paul Quiz " + score)
+  answered = true
+}
+</script>
